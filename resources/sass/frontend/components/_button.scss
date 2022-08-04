@@ -1,0 +1,17 @@
+.press--effect:active {
+    transform: translateY(2px);
+}
+.btn--product-card {
+    @include textStyle($color-white, 16px, $font-weight-bold);
+    display: inline-block;
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: $color-button-search-1;
+    border-radius: $border-radius-default;
+    &:hover {
+        color: $color-white;
+        background: $color-button-search-2;
+    }
+}

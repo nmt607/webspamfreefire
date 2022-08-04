@@ -1,0 +1,49 @@
+//BOOTSTRAP - OVERRIDE
+// === VARIABLE ===
+// CONTAINER
+// Required to declaration
+$container-max-widths: (
+    ms: 390px,
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    ml: 1005px,
+    xl: 1140px,
+    xxl: 1200px,
+);
+
+// GRID SYSTEM
+// Required to declaration
+$grid-breakpoints: (
+    xs: 0,
+    ms: 400px,
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    ml: 1050px,
+    xl: 1200px,
+    xxl: 1400px,
+);
+
+// Optional
+// $grid-columns: 12;
+$grid-gutter-width: 30px;
+
+// LOADING SPINNER
+$spinner-width: 1.8rem;
+
+
+//BUTTON
+// $input-btn-focus-width: 0px;
+
+// COLOR
+// $primary: #D62727;
+// $secondary: #d9534f;
+
+//=== CLASS ===
+// CAROUSEL
+// .carousel-control-prev,
+// .carousel-control-next {
+//     transition-property: all !important;
+//     transition-duration: 0.5s !important;
+// }

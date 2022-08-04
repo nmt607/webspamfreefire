@@ -1,0 +1,94 @@
+//------DIMENSION------
+$scrollbar-width: 8px;
+// HEIGHT
+$header-height: 48px;
+// LINE-HEIGHT
+$lh-default: 1.5;
+
+//------COLOR------
+$color-background-default: #fff;
+$color-background-secondary: #f4f4f4;
+$color-text-primary: #333;
+$color-text-secondary: #666;
+$color-primary: #c02f2e;
+$color-secondary: #e93737;
+$color-ternary: #9c2626;
+$color-btn-primary: #c9302c;
+$color-btn-secondary: #d9534f;
+$color-white: #fff;
+$color-white-1: #e0e0e0;
+$color-black: #000;
+$color-black-1: #292929;
+$color-red: #ff0000;
+$color-red-1: #c60004;
+$color-gray: #666;
+$color-gray-1: #737577;
+$color-gray-2: #7375776c;
+$color-gray-3: #989898;
+$color-gray-4: #F3F4F6;
+$color-border-input: #ced4da;
+$color-orange: #ff6801;
+$color-orange-1: #ff3b00;
+$color-orange-2: #ff8a00;
+$color-orange-3: #ef3006;
+$color-sale-1: transparent linear-gradient(to right, $color-orange-2, $color-orange-1 100%) no-repeat;
+$color-product-card-memory: transparent linear-gradient(to right, #c2c2c2, #989898 100%) no-repeat;
+$color-product-card-price: -webkit-linear-gradient(360deg, $color-secondary, $color-primary);
+$color-button-search-1: transparent linear-gradient(to bottom, $color-secondary, $color-primary 100%) no-repeat;
+$color-button-search-2: transparent linear-gradient(to top, $color-secondary, $color-primary 100%) no-repeat;
+$color-product-label-1: linear-gradient(to right, #faab08, #d42611);
+$color-product-label-2: linear-gradient(to right, #68f097, #00823d);
+$color-service: linear-gradient(to right, #00917a, #00483d);
+$color-background-large-element: linear-gradient(to right, $color-red-1, $color-orange-3);
+$color-background-large-element-1: linear-gradient(to top, $color-red-1, $color-orange-3);
+// FONT-WEIGHT
+$font-weight-super-bold: 900;
+$font-weight-bold: 700;
+$font-weight-semi-bold: 600;
+$font-weight-default: 400;
+$font-weight-light: 300;
+
+// BORDER-RADIUS
+$border-radius-default: 6px;
+$border-radius-1: 10px;
+$border-radius-2: 16px;
+$border-radius-3: 20px;
+
+//BORDER-COLOR
+$border-color-gray: #eee;
+
+// BORDER
+$border-product-card-option: 1px solid #e0e0e0;
+$border-product-card: 1px solid #e3e3e3;
+$border-special-nav-tab-item: 1px solid rgba(255, 255, 255, 0.8);
+$border-footer-title: 2px solid $color-primary;
+
+// SHADOW
+$box-shadow-section: 0 4px 6px #00000029;
+$box-shadow-emlement: 0 4px 6px #ccc;
+$box-shadow-filter-show: 0 2px 20px rgb(0 0 0 / 50%);
+$box-shadow-emlement--hover: 0 0px 12px 12px rgb(0 0 0 / 12%);
+$box-shadow-special-product-card: 0 4px 6px #000000;
+$box-shadow-arrow-up:-2px -2px 5px -4px;
+// MARGIN OFFSET
+$margin-offset: 14%;
+
+//Carousel banner
+$color-carousel-banner-next-prev: #ffffffb0;
+$color-carousel-banner-next-prev--hover: #ffffff;
+$box-shadow-carousel-banner-next: -6px 0 4px #0000000d, -4px 0 4px #00000017;
+$box-shadow-carousel-banner-prev: 6px 0 4px #0000000d, 4px 0 4px #00000017;
+$color-carousel-banner-dot: #ddd;
+$box-shadow-carousel-banner-dot: 0 3px 6px #00000029;
+$color-carousel-banner-thumbs: transparent linear-gradient(45deg, $color-secondary, $color-primary 100%) no-repeat;
+
+//Product card slider
+$color-product-card-slider-next-prev: #dfdfdf85;
+$color-product-card-slider-next-prev--hover: #dfdfdf;
+
+//Tab list product special
+$color-text-special-tag-list: rgba(255, 255, 255, 0.8);
+$border-special-nav-tab-item: 1px solid rgba(255, 255, 255, 0.8);
+//Tab list watch
+$color-text-watch-tab-item--active: #05314a;
+$color-bgc-watch-tag-list: #173546;

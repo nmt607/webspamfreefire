@@ -1,0 +1,458 @@
+//====== SEPARATE LINE  ======
+@mixin separateLine($width, $height, $bg-color, $top, $right) {
+    content: "";
+    display: block;
+    background-color: $bg-color;
+    width: $width;
+    height: $height;
+    position: absolute;
+    right: $right;
+    top: $top;
+    transform: translateY(-50%);
+}
+
+//====== BRIDGE-HOVER ======
+@mixin bridgeHover($height-bridge, $width-bridge, $top-bridge, $right-bridge, $left-bridge) {
+    content: "";
+    display: block;
+    position: absolute;
+    height: $height-bridge;
+    width: $width-bridge;
+    top: $top-bridge;
+    right: $right-bridge;
+    left: $left-bridge;
+}
+//====== ARROW ======
+@mixin arrowUp($top, $right, $color) {
+    content: "";
+    border: 20px solid;
+    border-color: transparent transparent $color transparent;
+    position: absolute;
+    top: $top;
+    right: $right;
+}
+
+@mixin arrowDown($top, $right, $color) {
+    content: "";
+    border: 20px solid;
+    border-color: $color transparent transparent transparent;
+    position: absolute;
+    top: $top;
+    right: $right;
+}
+
+//====== BLUR ======
+@mixin blur($width, $bgc) {
+    @include media-breakpoint-down(md) {
+        position: relative;
+        &::after {
+            background: linear-gradient(to right, rgba(255 255 255/0), $bgc);
+            content: "";
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: $width;
+        }
+    }
+}
+
+//====== TEXT STYLE ======
+@mixin textStyle($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+//====== BUTTON ======
+@mixin button($border, $bg, $color, $padding, $border-hover, $bg-hover, $color-hover) {
+    border: 1px solid $border;
+    background-color: $bg;
+    color: $color;
+    padding: $padding;
+    cursor: pointer;
+    &:hover {
+        border-color: $border-hover;
+        background-color: $bg-hover;
+        color: $color-hover;
+    }
+}
+
+//====== SPECIAL LIST PRODUCT SECTION ======
+@mixin specialProductSection($text-color--active, $bgc-color, $box-shadow-container-item) {
+    .special-section-container {
+        display: flex;
+        background-color: $color-bgc-watch-tag-list;
+        border-radius: $border-radius-default;
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+            border-radius: 0;
+        }
+        .special-section-banner {
+            width: 222px;
+            img {
+                border-top-left-radius: $border-radius-default;
+            }
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                img {
+                    width: 100%;
+                    border-top-right-radius: $border-radius-default;
+                }
+            }
+        }
+        .tab-list-product-special {
+            position: relative;
+            width: calc(100% - 222px);
+            background-color: $bgc-color;
+            padding: 10px 10px 10px 0;
+            border-top-right-radius: $border-radius-default;
+            border-bottom-right-radius: $border-radius-default;
+            @include media-breakpoint-down(lg) {
+                padding-bottom: 46px;
+            }
+            @include media-breakpoint-down(md) {
+                width: 100%;
+                padding: 5px;
+                padding-bottom: 46px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: $border-radius-default;
+                border-bottom-left-radius: $border-radius-default;
+            }
+            &__nav-tab {
+                display: flex;
+                align-items: center;
+                margin-bottom: 12px;
+            }
+            &__nav-wrapper-item {
+                display: flex;
+                align-items: center;
+                @include media-breakpoint-down(md) {
+                    width: 100%;
+                    justify-content: space-between;
+                }
+            }
+            &__nav-item {
+                @include textStyle($color-text-special-tag-list, 15px, $font-weight-semi-bold);
+                flex-shrink: 1;
+                height: 42px;
+                padding: 0 6px;
+                line-height: 1.2;
+                margin-right: 8px;
+                &:last-child {
+                    margin-right: 0px;
+                }
+
+                border: $border-special-nav-tab-item;
+                border-radius: $border-radius-default;
+                background-color: transparent;
+                @include media-breakpoint-down(md) {
+                    flex-grow: 1;
+                }
+                @include media-breakpoint-down(sm) {
+                    font-size: 14px;
+                }
+                &:hover {
+                    background-color: $color-white;
+                    color: $text-color--active;
+                }
+                &.active {
+                    background-color: $color-white;
+                    color: $text-color--active;
+                    position: relative;
+                }
+            }
+            &__nav-wrapper-link {
+                flex-grow: 1;
+                flex-shrink: 0;
+                @include media-breakpoint-down(lg) {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 20px;
+                    right: 20px;
+                    border: $border-product-card-option;
+                    border-radius: $border-radius-default;
+                }
+            }
+            &__nav-read-more {
+                display: none;
+                width: 100%;
+                font-size: 14px;
+                color: $color-white;
+                text-align: right;
+                @include media-breakpoint-down(lg) {
+                    padding: 6px;
+                    text-align: center;
+                }
+                &.active {
+                    display: block;
+                }
+            }
+            &__nav-amount-link {
+                font-weight: $font-weight-bold;
+            }
+            &__nav-icon {
+                color: $color-text-special-tag-list;
+                &::before {
+                    transform: translateY(1px);
+                }
+            }
+
+            &__tab-panel {
+                display: none;
+                &.active {
+                    display: block;
+                    .swiper-slide {
+                        animation: slide-in-bottom 0.3s ease-in-out both;
+                    }
+                }
+            }
+            &__tab-content {
+                @include media-breakpoint-down(md) {
+                    .product-card-slider {
+                        margin-right: -5px;
+                        padding-bottom: 0 !important;
+                        .swiper-wrapper {
+                            transform: none !important;
+                            flex-wrap: wrap;
+                            box-sizing: border-box;
+                            .swiper-slide {
+                                width: 33.33%;
+                                .product-card {
+                                    width: auto;
+                                    max-width: unset;
+                                    margin-bottom: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+                @include media-breakpoint-down(ms) {
+                    .product-card-slider {
+                        .swiper-wrapper {
+                            .swiper-slide {
+                                width: 50%;
+                            }
+                        }
+                    }
+                }
+            }
+            &__tab-item-container {
+                box-shadow: $box-shadow-container-item;
+                @include media-breakpoint-down(sm) {
+                    padding: 5px 1px;
+                }
+                @include media-breakpoint-down(ms) {
+                    padding: 5px 5px;
+                }
+            }
+        }
+    }
+}
+
+//====== CATEGORY HEADING ======
+@mixin sectionHeading($numItemDisplay) {
+    .section-container--heading {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        margin-bottom: 12px;
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+        .section--heading {
+            margin-right: 40px;
+            @include media-breakpoint-down(md) {
+                margin-right: 0;
+                margin-bottom: 6px;
+                padding-left: 10px;
+                width: 100%;
+            }
+            &__link {
+                font-size: 24px;
+                font-weight: $font-weight-bold;
+                background: linear-gradient(to right, $color-red-1, $color-orange-3);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                @include media-breakpoint-down(md) {
+                    font-size: 18px;
+                }
+            }
+        }
+        .category--heading {
+            @include blur(42px, $color-white);
+            flex-grow: 1;
+            @include media-breakpoint-down(md) {
+                width: 100%;
+            }
+            &__wrapper {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                @include media-breakpoint-down(md) {
+                    flex-wrap: nowrap;
+                    overflow-x: scroll;
+                    justify-content: flex-start;
+                    padding-left: 10px;
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+                    scrollbar-width: none;
+                }
+            }
+            &__link {
+                @include textStyle($color-text-primary, 14px, $font-weight-semi-bold);
+                padding: 0px 11px;
+                margin-left: 10px;
+                max-width: 204px;
+                height: 35px;
+                line-height: 35px;
+                overflow: hidden;
+                word-break: break-all;
+                border: $border-product-card-option;
+                border-radius: $border-radius-2;
+                &:first-child {
+                    margin-left: 0;
+                }
+                &:hover {
+                    color: $color-primary;
+                    b {
+                        color: $color-primary;
+                    }
+                }
+                b {
+                    color: $color-black;
+                }
+                @include media-breakpoint-down(md) {
+                    &:nth-last-child(2) {
+                        margin-right: 10px;
+                    }
+                }
+                @include media-breakpoint-up(md) {
+                    &:not(.category--heading__readmore):nth-child(n + #{$numItemDisplay}) {
+                        display: none;
+                    }
+                }
+                @include media-breakpoint-down(md) {
+                    flex-shrink: 0;
+                    background-color: $color-white;
+                }
+            }
+            &__readmore {
+                @include media-breakpoint-down(md) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+//====== SCROLL ======
+@mixin scroll-style() {
+    scrollbar-width: thin;
+    &::-webkit-scrollbar {
+        width: $scrollbar-width;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $color-primary;
+        border-radius: 10px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: $color-secondary;
+    }
+}
+
+// // ====== RESPONSIVE ======
+// // BETWEEN-SIZES
+// @mixin reponsBetween($fromScreen, $toScreen) {
+//     @if map-has-key($map: $grid-breakpoints, $key: $fromScreen) and
+//         map-has-key($map: $grid-breakpoints, $key: $toScreen)
+//     {
+//         $minValue: map-get(
+//             $map: $grid-breakpoints,
+//             $key: $fromScreen,
+//         );
+//         $maxValue: map-get(
+//             $map: $grid-breakpoints,
+//             $key: $toScreen,
+//         );
+//         $maxValue: (($maxValue - 0.02)/16) * 1em/1px;
+//         @media screen and (min-width: ($minValue)) and (max-width: ($maxValue)) {
+//             @content;
+//         }
+//     } @else {
+//         @warn "#{$fromScreen} or #{$toScreen} isn't exist in breakpoints";
+//     }
+// }
+// // MIN-WIDHT
+// @mixin responMoreThan($screen) {
+//     @if map-has-key($map: $grid-breakpoints, $key: $screen) {
+//         $value: map-get(
+//             $map: $grid-breakpoints,
+//             $key: $screen,
+//         );
+//         $value: ($value/16) * 1em/1px;
+//         @media screen and (min-width: ($value)) {
+//             @content;
+//         }
+//     } @else {
+//         @warn "#{$screen} isn't exist in breakpoints";
+//     }
+// }
+// // MAX-WIDHT
+// @mixin responLessThan($screen) {
+//     @if map-has-key($map: $grid-breakpoints, $key: $screen) {
+//         $value: map-get(
+//             $map: $grid-breakpoints,
+//             $key: $screen,
+//         );
+//         $value: (($value - 0.02)/16) * 1em/1px;
+//         @media screen and (max-width: ($value)) {
+//             @content;
+//         }
+//     } @else {
+//         @warn "#{$screen} isn't exist in breakpoints";
+//     }
+// }
+
+// // ====== RESPONSIVE EX ======
+// // BETWEEN-SIZES RESPONSIVE
+// @include reponsBetween("ms", "lg") {
+// }
+
+// // MIN-WIDTH RESPONSIVE
+// @include responMoreThan("ms") {
+// }
+// @include responMoreThan("sm") {
+// }
+// @include responMoreThan("md") {
+// }
+// @include responMoreThan("lg") {
+// }
+// @include responMoreThan("ml") {
+// }
+// @include responMoreThan("xl") {
+// }
+
+// // MAX-WIDTH RESPONSIVE
+// @include responLessThan("xl") {
+// }
+// @include responLessThan("ml") {
+// }
+// @include responLessThan("lg") {
+// }
+// @include responLessThan("md") {
+// }
+// @include responLessThan("sm") {
+// }
+// @include responLessThan("ms") {
+// }

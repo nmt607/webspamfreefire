@@ -1,0 +1,76 @@
+.admin__content {
+    .date-dropdown-btn {
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        position: relative;
+        &-icon{
+            margin-left: 6px;
+            line-height: 0;
+        }
+        .filter-status{
+            display: none;
+            margin-left: 5px;
+            color: $color-primary;
+        }
+    }
+    .datepicker-dropdown-menu {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        border-radius: $border-radius-default;
+        border: none;
+        padding: 8px 12px;
+        background-color: $color-white;
+        box-shadow: $box-shadow-special-product-card;
+    }
+    .filter-date {
+        .fromDate-wrapper {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+        }
+
+        .input-date {
+            width: 124px;
+            text-align: center;
+            border-bottom: $border-product-card-option;
+            cursor: pointer;
+            &::placeholder{
+                text-align: center;
+            }
+            &:first-child{
+                margin-right: 6px;
+            }
+            &:last-child{
+                margin-left: 6px;
+            }
+        }
+
+    }
+    .datePicker-btn {
+        margin-top: 12px;
+        margin-bottom: 12px;
+        text-align: center;
+        .filter-btn {
+            min-width: 118px;
+            &:first-child{
+                margin-right: 12px;
+            }
+        }
+    }
+    .datePicker-note{
+        white-space: nowrap;
+        color: $color-text-primary;
+        span{
+            color: $color-primary;
+        }
+    }
+}
+.download-filter {
+    border: $border-product-card-option;
+    text-align: center;
+    padding: 6px 4px;
+    border-radius: 4px;
+}

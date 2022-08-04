@@ -1,0 +1,55 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap");
+@import "~bootstrap-icons/font/bootstrap-icons";
+
+
+// 2. Include any default variable overrides here
+@import "./vendors/bootstrap/extensions/bootstrap-customize";
+
+// 3. BOOTSTRAP 5
+@import "~bootstrap/scss/bootstrap";
+
+// MATERIALIZE CSS
+@import "~materialize-css/sass/components/waves";
+
+// SWEETALERT2
+// @import '~sweetalert2/src/variables';
+@import "~sweetalert2/src/sweetalert2";
+
+// ANIMATE-CSS
+@import "~animate-scss/animate";
+
+// HOVER-CSS
+@import "~hover.css/scss/hover";
+
+// NORMALIZE
+@import "~normalize-scss/sass/normalize";
+
+// TOASR
+@import "toastr/toastr";
+
+// ABSTRACTS
+@import "./abstracts/variable";
+@import "./abstracts/mixin";
+@import "./abstracts/function";
+@import "./abstracts/extend";
+
+// BASE
+@import "./base/base";
+@import "./base/font";
+@import "./base/typography";
+@import "./base/animations";
+
+// COMPONENTS
+@import "./components/back-to-top";
+@import "./components/button";
+
+// LAYOUT
+@import "./layout/header";
+@import "./layout/footer";
+
+// PAGES
+@import "./pages/home/index";
+
+
+
